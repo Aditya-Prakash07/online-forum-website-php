@@ -1,12 +1,7 @@
 <?php
-$server = "127.0.0.1";
-$username = "admin";
-$password = "admin123";
-$database = "forumhive_db";
-$conn = mysqli_connect($server, $username, $password, $database);
-if($conn){
-    echo "connection successful";
-}else{
-    die("connection error".mysqli_connect_error());
+require 'partials/_config.php';
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
