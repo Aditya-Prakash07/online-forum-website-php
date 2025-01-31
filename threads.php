@@ -15,7 +15,7 @@ include "partials/_dbconnect.php";
     crossorigin="anonymous" />
 </head>
 
-<body class="bg-dark">
+<body class="bg-black">
   
   <?php
   include "partials/_header.php";
@@ -31,7 +31,23 @@ include "partials/_dbconnect.php";
             <br>
             Beyond mobile and enterprise software, Java plays a significant role in web development, with frameworks like Spring Boot enabling the creation of robust APIs and dynamic web applications. It is widely adopted in big data processing, artificial intelligence, and cloud computing, integrating seamlessly with platforms like AWS, Azure, and IoT devices. With a vast ecosystem of libraries, strong community support, and continuous improvements, Java remains a top choice for developers seeking efficiency, scalability, and cross-platform compatibility in their projects.
         </p>
+        <hr>
+        <p>This is a peer to peer Forum for sharing knowledge with each other.</p>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-secondary" type="button">Learn More</button>
+        </div>
     </div>
+  </div>
+ 
+  <div class="container px-5">
+        <div class="d-flex align-items-center px-5">
+        <div class="flex-shrink-0 px-5">
+            <img src="/images/img2.jpg" width = "50px" alt="...">
+        </div>
+            <div class="flex-grow-1 ms-3 text-light px-5">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores provident, illum molestias placeat quisquam, quis ad assumenda exercitationem aperiam sint, repellendus nesciunt beatae molestiae blanditiis et ullam perferendis quam eius. Animi hic maiores esse ex?
+            </div>
+        </div>
   </div>
 
   <?php

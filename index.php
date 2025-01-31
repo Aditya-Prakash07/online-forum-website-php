@@ -15,7 +15,7 @@ include "partials/_dbconnect.php";
     crossorigin="anonymous" />
 </head>
 
-<body class="bg-dark">
+<body class="bg-black">
   
   <?php
   include "partials/_header.php";
@@ -214,7 +214,7 @@ include "partials/_dbconnect.php";
   </div>
 <!-- Categories container starts here -->
   <div class="container mt-4">
-    <h3 class="text-center">ForumHive - Browse Categories</h3>
+    <h3 class="text-center text-warning">ForumHive - Browse Categories</h3>
     <div class="row mt-4">
       <!-- Fetch all the categories -->
       <?php
