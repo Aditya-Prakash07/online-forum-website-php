@@ -26,7 +26,7 @@ include "partials/_dbconnect.php";
     class="carousel slide"
     data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active h-30">
+      <div class="carousel-item active">
         <img
           src="/images/landscape/landscape1.jpg"
           class="d-block w-100"
