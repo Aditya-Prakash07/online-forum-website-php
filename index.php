@@ -228,17 +228,17 @@ include "partials/_dbconnect.php";
           $cat = $row['category_name'];
           $desc = $row['category_description'];
           echo '<div class="col-md-4 mt-4">
-                  <div class="card mx-auto" style="width: 17rem">
+                  <div class="card mx-auto bg-dark text-light" style="width: 17rem">
                     <img
                       src="https://media.istockphoto.com/id/178447404/fr/photo/b%C3%A2timents-daffaires-moderne.jpg?s=612x612&w=0&k=20&c=KDgacnz516dO2YiaMsiyHABoHaBhv5K1CRjHUEbcviQ="
                       class="card-img-top"
                       alt="java_image" />
                     <div class="card-body">
-                      <h5 class="card-title">' .$cat . '</h5>
+                      <h5 class="card-title text-warning">' .$cat . '</h5>
                       <p class="card-text">
                         ' . htmlspecialchars(substr($desc, 0, 70 )). '...
                       </p>
-                      <a href="/threads.php" class="btn btn-primary">View Threads</a>
+                      <a href="/threads.php" class="btn btn-warning">View Threads</a>
                     </div>
                   </div>
                 </div>';

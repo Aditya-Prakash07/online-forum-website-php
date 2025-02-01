@@ -34,7 +34,7 @@ include "partials/_dbconnect.php";
         <hr>
         <p>This is a peer to peer Forum for sharing knowledge with each other.</p>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-secondary" type="button">Learn More</button>
+            <button class="btn btn-warning" type="button">Learn More</button>
         </div>
     </div>
   </div>
