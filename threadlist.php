@@ -25,9 +25,10 @@ include "partials/_dbconnect.php";
     $id = $_GET['catid'];
     $sql = "SELECT * FROM `categories` WHERE category_id=$id";
     $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $catname = $row['category_name'];
-    $catdesc = $row['category_description'];
+    while($row = mysqli_fetch_assoc($result)){
+        $catname = $row['category_name'];
+        $catdesc = $row['category_description'];
+    }
     ?>
 
     <div class="container mt-5 p-5">
@@ -50,7 +51,7 @@ include "partials/_dbconnect.php";
         </div>
     </div>
 
-    <div class="container mx-5 px-5">
+    <div class="container mx-5 px-5 style" style="min-height: 20vh;">
         <h3 class="text-warning mx-5">Browse Questions</h3>
         <?php
         $id = $_GET['catid'];
@@ -66,88 +67,12 @@ include "partials/_dbconnect.php";
                     <img src="/images/default.png" width="43px" alt="...">
                 </div>
                 <div class="flex-grow-1 ms-3 text-light">
-                    <h6 class="text-warning"><a href="thread.php">'.$threadtitle.'</a></h6>
+                    <h6 class="text-warning"><a href="thread.php?threadid='.$threadid.'">'.$threadtitle.'</a></h6>
                     '.$threaddesc.'
                 </div>
             </div>';
         }
         ?>
-
-
-        <!-- will remove this  latter on putting this just to check html alignment -->
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class="text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-
     </div>
 
     <?php
