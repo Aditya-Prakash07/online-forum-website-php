@@ -1,0 +1,23 @@
+.carousel-item img {
+    height: 80vh; /* Default height for larger screens */
+    width: 100%; /* Ensures full width */
+    object-fit: cover; /* Maintains aspect ratio while covering the space */
+  }
+  
+  /* Adjust for tablets */
+  @media (max-width: 768px) { 
+    .carousel-item img {
+      height: 60vh;
+    }
+  }
+  
+  /* Adjust for mobile screens */
+  @media (max-width: 480px) { 
+    .carousel-item img {
+      height: auto; /* Auto height to maintain aspect ratio */
+      max-height: 50vh; /* Limits height */
+    }      
+      
+  }
+  
+  

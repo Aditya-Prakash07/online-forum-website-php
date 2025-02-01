@@ -13,6 +13,7 @@ include "partials/_dbconnect.php";
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-black">
@@ -235,7 +236,7 @@ include "partials/_dbconnect.php";
                     <div class="card-body">
                       <h5 class="card-title">' .$cat . '</h5>
                       <p class="card-text">
-                        ' . substr($desc, 0, 70 ). '...
+                        ' . htmlspecialchars(substr($desc, 0, 70 )). '...
                       </p>
                       <a href="/threads.php" class="btn btn-primary">View Threads</a>
                     </div>
