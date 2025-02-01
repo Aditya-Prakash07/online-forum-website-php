@@ -22,7 +22,7 @@ include "partials/_dbconnect.php";
     ?>
 
 <div class="container p-5">
-    <div class="mt-4 p-5 bg-secondary text-light rounded shadow-lg">
+    <div class="mt-4 p-5 bg-dark text-light rounded shadow-lg">
         <h3 class="mb-4"><span class="text-warning">ForumHive 🐝</span> Contact Us</h3>
         <h6 class="mb-4">We would love to hear from you! Whether you have questions, feedback, or suggestions, feel free to reach out to us using the contact form below:</h6>
 
