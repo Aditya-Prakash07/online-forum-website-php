@@ -13,6 +13,7 @@ include "partials/_dbconnect.php";
         rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-black">
@@ -20,39 +21,66 @@ include "partials/_dbconnect.php";
     <?php
     include "partials/_header.php";
     ?>
+    <?php
+    $id = $_GET['catid'];
+    $sql = "SELECT * FROM `categories` WHERE category_id=$id";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $catname = $row['category_name'];
+    $catdesc = $row['category_description'];
+    ?>
 
     <div class="container mt-5 p-5">
         <div class="mt-4 p-5 bg-secondary  text-light rounded">
-            <h1 class="text-warning">☕ Java – The Versatile & Powerful Programming Language </h1>
+            <h1 class="text-warning">Welcome to <?php echo $catname; ?> forums. </h1>
             <p>
-                Java is a powerful, object-oriented, and platform-independent programming language that plays a crucial role in modern software development. Known for its "Write Once, Run Anywhere" capability, Java allows developers to write code that can run on any operating system with a Java Virtual Machine (JVM). Its versatility and reliability make it a preferred choice for building enterprise applications, mobile apps, web platforms, and cloud-based solutions. Java's object-oriented approach promotes modular programming, making code more reusable, maintainable, and scalable.
-                <br>
-                One of Java’s key strengths is its high performance and security. With features like automatic memory management through garbage collection and built-in security mechanisms, Java ensures stability and protection against vulnerabilities. Its support for multi-threading allows efficient handling of concurrent tasks, making it suitable for high-performance applications. Java is extensively used in enterprise solutions such as banking, e-commerce, and large-scale business systems. It is also the foundation of Android application development, powering millions of mobile apps worldwide.
-                <br>
-                Beyond mobile and enterprise software, Java plays a significant role in web development, with frameworks like Spring Boot enabling the creation of robust APIs and dynamic web applications. It is widely adopted in big data processing, artificial intelligence, and cloud computing, integrating seamlessly with platforms like AWS, Azure, and IoT devices. With a vast ecosystem of libraries, strong community support, and continuous improvements, Java remains a top choice for developers seeking efficiency, scalability, and cross-platform compatibility in their projects.
+                <?php echo $catdesc; ?>
             </p>
             <hr>
             <h5><span class="text-warning">ForumHive 🐝</span> Rules & Guidelines</h5>
             <ul>
                 <li>
-                Welcome to <span class="text-warning">ForumHive 🐝 !</span> To keep this community buzzing with respectful and meaningful discussions, please follow the rules.
+                    Welcome to <span class="text-warning">ForumHive 🐝 !</span> To keep this community buzzing with respectful and meaningful discussions, please follow the rules.
                 </li>
             </ul>
             <a href="/forumrules.php" class="btn btn-outline-warning btn-lg" role="button">
-    Learn more
-</a>
+                Learn more
+            </a>
 
         </div>
     </div>
 
     <div class="container mx-5 px-5">
         <h3 class="text-warning mx-5">Browse Questions</h3>
+        <?php
+        $id = $_GET['catid'];
+        $sql = "SELECT * FROM `threads` WHERE thread_category_id=$id";
+        $result = mysqli_query($conn, $sql);
+        while( $row = mysqli_fetch_assoc($result)){
+            $threadid = $row['thread_id'];
+            $threadtitle = $row['thread_title'];
+            $threaddesc = $row['thread_description'];
+
+        echo '<div class="d-flex my-3 mx-5">
+                <div class="flex-shrink-0">
+                    <img src="/images/default.png" width="43px" alt="...">
+                </div>
+                <div class="flex-grow-1 ms-3 text-light">
+                    <h6 class="text-warning"><a href="thread.php">'.$threadtitle.'</a></h6>
+                    '.$threaddesc.'
+                </div>
+            </div>';
+        }
+        ?>
+
+
+        <!-- will remove this  latter on putting this just to check html alignment -->
         <div class="d-flex my-3 mx-5">
             <div class="flex-shrink-0">
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -61,7 +89,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -70,7 +98,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -79,7 +107,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -88,7 +116,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -97,7 +125,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -106,7 +134,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>
@@ -115,16 +143,7 @@ include "partials/_dbconnect.php";
                 <img src="/images/default.png" width="43px" alt="...">
             </div>
             <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-            </div>
-        </div>
-        <div class="d-flex my-3 mx-5">
-            <div class="flex-shrink-0">
-                <img src="/images/default.png" width="43px" alt="...">
-            </div>
-            <div class="flex-grow-1 ms-3 text-light">
-                <h6 class = "text-warning">Aditya Prakash</h6>
+                <h6 class="text-warning">Aditya Prakash</h6>
                 This is some content from a media component. You can replace this with any content and adjust it as needed.
             </div>
         </div>

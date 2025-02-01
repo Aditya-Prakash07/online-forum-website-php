@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content bg-dark border-warning text-light">
+        <div class="modal-content bg-black border-warning text-light">
             <div class="modal-header border-warning bg-warning">
                 <h1 class="modal-title fs-5 text-dark" id="loginModalLabel">Login to ForumHive 🐝</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -21,11 +21,7 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <button type="submit" class="btn btn-secondary">Login</button>
-
-                </div>
-                <div class="modal-footer border-warning bg-warning">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning">Login</button>
                 </div>
             </form>
         </div>

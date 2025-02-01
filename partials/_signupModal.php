@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content bg-dark border-warning text-light">
+        <div class="modal-content bg-black border-warning text-light">
             <div class="modal-header border-warning bg-warning text-dark">
                 <h1 class="modal-title fs-5" id="signupModalLabel">Signup to get a ForumHive 🐝 account.</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -26,12 +26,9 @@
                         <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
-                    <button type="submit" class="btn btn-secondary">Submit</button>
+                    <button type="submit" class="btn btn-warning">Submit</button>
 
 
-                </div>
-                <div class="modal-footer border-warning bg-warning">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>
