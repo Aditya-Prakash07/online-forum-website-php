@@ -227,8 +227,8 @@ include "partials/_dbconnect.php";
           // echo $row['category_name'];
           $cat = $row['category_name'];
           $desc = $row['category_description'];
-          echo '<div class="col-md-4 mt-4">
-                  <div class="card mx-auto bg-dark text-light" style="width: 17rem">
+          echo '<div class="col-md-4 my-4">
+                  <div class="card mx-auto bg-black text-light" style="width: 17rem">
                     <img
                       src="https://media.istockphoto.com/id/178447404/fr/photo/b%C3%A2timents-daffaires-moderne.jpg?s=612x612&w=0&k=20&c=KDgacnz516dO2YiaMsiyHABoHaBhv5K1CRjHUEbcviQ="
                       class="card-img-top"
