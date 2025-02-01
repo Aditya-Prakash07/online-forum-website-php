@@ -31,7 +31,7 @@ include "partials/_dbconnect.php";
     }
     ?>
 
-    <div class="container mt-5 p-5">
+    <div class="container  mt-1 p-5">
         <div class="mt-4 p-5 bg-secondary  text-light rounded">
             <h1 class="text-warning">Welcome to <?php echo $catname; ?> forums. </h1>
             <p>
@@ -51,18 +51,20 @@ include "partials/_dbconnect.php";
         </div>
     </div>
 
-    <div class="container mx-5 px-5 style" style="min-height: 20vh;">
+    <div class="container style" style="min-height: 20vh;">
         <h3 class="text-warning mx-5">Browse Questions</h3>
         <?php
         $id = $_GET['catid'];
         $sql = "SELECT * FROM `threads` WHERE thread_category_id=$id";
         $result = mysqli_query($conn, $sql);
+        $noresult = true;
         while( $row = mysqli_fetch_assoc($result)){
+            $noresult = false;
             $threadid = $row['thread_id'];
             $threadtitle = $row['thread_title'];
             $threaddesc = $row['thread_description'];
 
-        echo '<div class="d-flex my-3 mx-5">
+        echo '<div class="d-flex my-2 mx-5">
                 <div class="flex-shrink-0">
                     <img src="/images/default.png" width="43px" alt="...">
                 </div>
@@ -72,6 +74,26 @@ include "partials/_dbconnect.php";
                 </div>
             </div>';
         }
+        if($noresult){
+            echo '<div class="container px-5">
+                    <div class="mt-4 p-5 bg-secondary  text-light rounded">
+                        <h1 class="text-warning">No Results Found</h1>
+                        <p>
+                            <?php echo $catdesc; ?>
+                        </p>
+                        <hr>
+                        <strong>
+                        Be the first to start the conversation! Ask a question and spark meaningful discussions.
+                        </strong>
+                        <br>
+                        <a href="/forumrules.php" class="btn btn-outline-warning btn-lg" role="button">
+                           Start the Buzz! 🐝
+                        </a>
+
+                    </div>
+                </div>';
+        }
+        
         ?>
     </div>
 
