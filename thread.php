@@ -30,8 +30,25 @@
             $threaddesc = $row['thread_description'];
         }
     ?>
+    <?php 
+    $showAlert = false;
+    $method = $_SERVER['REQUEST_METHOD'];
+    if($method=="POST"){
+        // insert a thread into comment db
+        $comment = $_POST['comment'];
+        $sql = "INSERT INTO `comments` (`comment_content`, `thread_id`, `comment_by`, `comment_time`) VALUES ('$comment', '$id', '0', CURRENT_TIMESTAMP)";
+        $result = mysqli_query($conn, $sql);
+        $showAlert = true;
+        if($showAlert){
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 60px">
+                    <strong>success!</strong> Your comment has been added.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+        }
+    }
+    ?>
 
-    <div class="container mt-5 p-5">
+    <div class="container p-5">
         <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
             <h3 class="text-warning"><?php echo $threadtitle; ?></h3>
             <p>
@@ -71,13 +88,15 @@
             $noResult = true;
             $id = $row['comment_id'];
             $content = $row['comment_content'];
+            $comment_time = $row['comment_time'];
            
 
         echo '<div class="d-flex my-3 mx-5">
                 <div class="flex-shrink-0">
-                    <img src="/images/default.png" width="34px" alt="...">
+                    <img src="/images/default.png" width="43px" alt="...">
                 </div>
                 <div class="flex-grow-1 ms-3 text-light">
+                    <p class="font-weight-bold my-0 text-warning">Anonymous User @ '.$comment_time.'</p>
                     '.$content.'
                 </div>
             </div>';

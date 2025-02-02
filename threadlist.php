@@ -42,11 +42,6 @@ include "partials/_dbconnect.php";
                     <strong>Holy guacamole!</strong> You should check in on some of those fields below.
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
-        }else{
-            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 60px">
-                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>';
         }
 
     }
@@ -111,11 +106,13 @@ include "partials/_dbconnect.php";
                 $threadid = $row['thread_id'];
                 $threadtitle = $row['thread_title'];
                 $threaddesc = $row['thread_description'];
+                $thread_time = $row['timestamp'];
                 echo '<div class="d-flex my-2 mx-5">
                     <div class="flex-shrink-0">
                         <img src="/images/default.png" width="43px" alt="...">
                     </div>
                     <div class="flex-grow-1 ms-3 text-light">
+                        <p class="font-weight-bold my-0 text-warning">Anonymous User @ '.$thread_time.'</p>
                         <h6 class="text-warning"><a href="thread.php?threadid=' . $threadid . '">' . $threadtitle . '</a></h6>
                         ' . $threaddesc . '
                     </div>
