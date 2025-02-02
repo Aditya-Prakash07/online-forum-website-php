@@ -32,39 +32,56 @@
     ?>
 
     <div class="container mt-5 p-5">
-        <div class="mt-4 p-5 bg-secondary  text-light rounded">
-            <h1 class="text-warning"><?php echo $threadtitle; ?></h1>
+        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+            <h3 class="text-warning"><?php echo $threadtitle; ?></h3>
             <p>
                 <?php echo $threaddesc; ?>
             </p>
             <hr>
-            <h5><span class="text-warning">ForumHive 🐝</span></h5>
+            <h3><span class="text-warning">ForumHive 🐝</span></h3>
             <p>This is a peer-to-peer forum for meaningful discussions. Spam, ads, and self-promotion are not allowed. Be respectful—no offensive or abusive content. Stay on topic, contribute thoughtfully, and keep the space valuable for all.</p>
             <p><strong><span class="text-warning">Posted By :</span> Aditya Prakash</strong></p>
         </div>
     </div>
 
-    <div class="container mx-5 px-5 style" style="min-height: 30vh;">
-        <h3 class="text-warning mx-5">Discussions</h3>
-        <?php
-        // $id = $_GET['catid'];
-        // $sql = "SELECT * FROM `threads` WHERE thread_category_id=$id";
-        // $result = mysqli_query($conn, $sql);
-        // while( $row = mysqli_fetch_assoc($result)){
-        //     $threadid = $row['thread_id'];
-        //     $threadtitle = $row['thread_title'];
-        //     $threaddesc = $row['thread_description'];
+    <div class="container px-5">
+        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+            <h3 class="text-warning">Post a comment 🐝</h3>
+            <hr>
+            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+                <div class="mb-3">
+                    <label for="comment" class="form-label"><strong>Type your comment</strong></label>
+                    <textarea class="form-control bg-secondary" id="comment" name="comment"  style="height: 50px"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-warning btn-lg">Post concern 🐝</button>
+            </form>
+        </div>
+    </div>
 
-        // echo '<div class="d-flex my-3 mx-5">
-        //         <div class="flex-shrink-0">
-        //             <img src="/images/default.png" width="43px" alt="...">
-        //         </div>
-        //         <div class="flex-grow-1 ms-3 text-light">
-        //             <h6 class="text-warning"><a href="thread.php">'.$threadtitle.'</a></h6>
-        //             '.$threaddesc.'
-        //         </div>
-        //     </div>';
-        //}
+    <div class="container mx-5 px-5 style" style="min-height: 30vh;">
+        <br>
+        <h4 class="text-warning mx-5">Community Buzz 🐝</h4>
+        <?php
+        $id = $_GET['threadid'];
+        $sql = "SELECT * FROM `comments` WHERE thread_id=$id";
+        $result = mysqli_query($conn, $sql);
+        $noResult = false;
+        while( $row = mysqli_fetch_assoc($result)){
+            $noResult = true;
+            $id = $row['comment_id'];
+            $content = $row['comment_content'];
+           
+
+        echo '<div class="d-flex my-3 mx-5">
+                <div class="flex-shrink-0">
+                    <img src="/images/default.png" width="34px" alt="...">
+                </div>
+                <div class="flex-grow-1 ms-3 text-light">
+                    '.$content.'
+                </div>
+            </div>';
+        }
         ?>
     </div>
 

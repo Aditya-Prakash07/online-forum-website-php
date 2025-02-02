@@ -27,17 +27,41 @@ include "partials/_dbconnect.php";
         $catdesc = $row['category_description'];
     }
     ?>
+    <?php 
+    $showAlert = false;
+    $method = $_SERVER['REQUEST_METHOD'];
+    if($method=="POST"){
+        // insert a thread into database
+        $th_title = $_POST['title'];
+        $th_desc = $_POST['desc'];
+        $sql = "INSERT INTO `threads` (`thread_title`, `thread_description`, `thread_category_id`, `thread_user_id`, `timestamp`) VALUES ('$th_title', '$th_desc', '$id', '0', CURRENT_TIMESTAMP)";
+        $result = mysqli_query($conn, $sql);
+        $showAlert = true;
+        if($showAlert){
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 60px">
+                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+        }else{
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 60px">
+                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+        }
+
+    }
+    ?>
 
     <div class="container  mt-1 p-5">
-        <div class="mt-4 p-5 bg-dark  text-light rounded">
-            <h1 class="text-warning">Welcome to
+        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+            <h3 class="text-warning">Welcome to
                 <?php echo $catname; ?> forums.
-            </h1>
+            </h3>
             <p>
                 <?php echo $catdesc; ?>
             </p>
             <hr>
-            <h5><span class="text-warning">ForumHive 🐝</span> Rules & Guidelines</h5>
+            <h3><span class="text-warning">ForumHive 🐝</span> Rules & Guidelines</h3>
             <ul>
                 <li>
                     Welcome to <span class="text-warning">ForumHive 🐝 !</span> To keep this community buzzing with
@@ -52,23 +76,23 @@ include "partials/_dbconnect.php";
     </div>
 
     <div class="container px-5">
-        <div class="mt-4 p-5 bg-dark  text-light rounded">
-            <h1 class="text-warning">Create the Buzz – Ask Your Question! 🐝</h1>
+        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+            <h3 class="text-warning">Create the Buzz – Ask Your Question! 🐝</h3>
             <hr>
             <br>
-            <form>
+            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label"> <strong>Thread Title</strong></label>
-                    <input type="text" class="form-control" id="title" name="title">
+                    <input type="text" class="form-control bg-secondary" id="title" name="title">
                     <div id="title" class="form-text">Keep your title as short and crisp as possible.</div>
                 </div>
 
                 <div class="mb-3">
                     <label for="desc" class="form-label"><strong>Elaborate Your Concern</strong></label>
-                    <textarea class="form-control" id="desc" name="desc"  style="height: 100px"></textarea>
+                    <textarea class="form-control bg-secondary" id="desc" name="desc"  style="height: 70px"></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-outline-warning btn-lg">Start the Buzz! 🐝</button>
+                <button type="submit" class="btn btn-warning btn-lg">Start the Buzz! 🐝</button>
             </form>
         </div>
     </div>
@@ -76,7 +100,7 @@ include "partials/_dbconnect.php";
     <div class="container style" style="min-height: 20vh;">
         <br>
         <br>
-        <h3 class="text-warning mx-5">Browse Questions</h3>'
+        <h4 class="text-warning mx-5">Explore the Buzz 🐝</h4>'
         <?php
             $id = $_GET['catid'];
             $sql = "SELECT * FROM `threads` WHERE thread_category_id=$id";

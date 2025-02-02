@@ -218,8 +218,9 @@ include "partials/_dbconnect.php";
   </div>
   <!-- Categories container starts here -->
   <div class="container mt-4">
+    <br>
     <h3 class="text-center text-warning">ForumHive - Browse Categories</h3>
-    <div class="row mt-4">
+    <div class="row mt-4 g-0">
       <!-- Fetch all the categories -->
       <?php
       $sql = "SELECT * FROM `categories`";
@@ -232,7 +233,7 @@ include "partials/_dbconnect.php";
         $cat = $row['category_name'];
         $desc = $row['category_description'];
         echo '<div class="col-md-4 my-4">
-          <div class="card mx-auto bg-black text-light" style="width: 17rem">
+          <div class="card mx-auto bg-black text-light" style="width: 16rem">
             <img
               src="/images/portrait/portrait' . $id . '.jpg"
               class="card-img-top img-fluid"
