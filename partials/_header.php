@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 echo '<nav class="navbar navbar-expand-lg bg-black fixed-top">
   <div class="container-fluid">
@@ -28,23 +29,42 @@ echo '<nav class="navbar navbar-expand-lg bg-black fixed-top">
        <li class="nav-item">
           <a class="nav-link active text-warning" href="/contact.php">Contact</a>
         </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2 border-warning" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-warning" type="submit">Search</button>
-      </form>
-            <div class="mx-2">
-        <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#loginModal">
-        Login
-        </button>
-        <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#signupModal">
-        Signup
-        </button>
+        <li class="nav-item">
+            <input class="form-control border-warning" style="margin-left: 100px" type="search" placeholder="Search" aria-label="Search">
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-warning" type="submit" style="margin-left: 103px">Search</button>
+        </li>
+      </ul>';
+      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+        echo '      <form class="d-flex" role="search">
+        <p class="text-warning m-2 flex-shrink-0"><strong>Welcome '. $_SESSION['username'] .'</strong></p> 
+        <a href="/partials/_logout.php" class="btn btn-outline-warning" type="submit">Logout</a>
+             
+      </form>';
+      }
+      else{
+        echo '
+          <div class="mx-2">
+            <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Login
+            </button>
+            <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#signupModal">
+            Signup
+            </button>
+          </div>';
+      }
+     echo '
       </div>
     </div>
-  </div>
-</nav>';
+  </nav>';
 
 include 'partials/_loginModal.php';
 include 'partials/_signupModal.php';
+if(isset($_GET['signupsuccess']) && $_GET['signupsuccess']==true){
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 60px">
+                    <strong>Welcome to the Hive! 🐝</strong> Your account is all set—dive in and start buzzing!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+}
 ?>

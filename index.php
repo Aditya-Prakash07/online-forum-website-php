@@ -90,114 +90,6 @@ include "partials/_dbconnect.php";
           class="d-block w-100"
           alt="..." />
       </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape11.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape12.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape13.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape14.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape15.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape16.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape17.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape18.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape19.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape20.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape21.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape22.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape23.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape24.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape25.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape26.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape27.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/landscape/landscape28.jpg"
-          class="d-block w-100"
-          alt="..." />
-      </div>
     </div>
     <button
       class="carousel-control-prev"
@@ -232,8 +124,8 @@ include "partials/_dbconnect.php";
         $id = $row['category_id'];
         $cat = $row['category_name'];
         $desc = $row['category_description'];
-        echo '<div class="col-md-4 my-4">
-          <div class="card mx-auto bg-black text-light" style="width: 16rem">
+        echo '<div class="col-md-6 my-4">
+          <div class="card mx-auto bg-black text-light" style="width: 21rem">
             <img
               src="/images/portrait/portrait' . $id . '.jpg"
               class="card-img-top img-fluid"
