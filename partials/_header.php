@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-echo '<nav class="navbar navbar-expand-lg bg-black fixed-top">
+echo '<nav class="navbar navbar-expand-lg bg-black sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand text-warning" href="/">ForumHive 🐝</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

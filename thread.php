@@ -48,8 +48,8 @@
     }
     ?>
 
-    <div class="container p-5">
-        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+    <div class="container-fluid p-3">
+        <div class="p-3 bg-dark  text-light rounded">
             <h3 class="text-warning"><?php echo $threadtitle; ?></h3>
             <p>
                 <?php echo $threaddesc; ?>
@@ -61,8 +61,8 @@
         </div>
     </div>
 
-    <div class="container px-5">
-        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+    <div class="container-fluid p-3">
+        <div class="p-3 bg-dark  text-light rounded">
             <h3 class="text-warning">Post a comment 🐝</h3>
             <hr>
             <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
@@ -76,9 +76,10 @@
         </div>
     </div>
 
-    <div class="container mx-5 px-5 style" style="min-height: 30vh;">
+    <div class="container-fluid" style="min-height: 20vh;">
         <br>
-        <h4 class="text-warning mx-5">Community Buzz 🐝</h4>
+        <br>
+        <h4 class="text-warning m-2">Community Buzz 🐝</h4>
         <?php
         $id = $_GET['threadid'];
         $sql = "SELECT * FROM `comments` WHERE thread_id=$id";
@@ -91,12 +92,12 @@
             $comment_time = $row['comment_time'];
            
 
-        echo '<div class="d-flex my-3 mx-5">
+        echo '<div class="d-flex m-2">
                 <div class="flex-shrink-0">
                     <img src="/images/default.png" width="43px" alt="...">
                 </div>
                 <div class="flex-grow-1 ms-3 text-light">
-                    <p class="font-weight-bold my-0 text-warning">Anonymous User @ '.$comment_time.'</p>
+                    <p class="font-weight-bold text-warning">Anonymous User @ '.$comment_time.'</p>
                     '.$content.'
                 </div>
             </div>';

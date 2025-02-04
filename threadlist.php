@@ -47,8 +47,8 @@ include "partials/_dbconnect.php";
     }
     ?>
 
-    <div class="container  mt-1 p-5">
-        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+    <div class="container-fluid p-3">
+        <div class="p-3 bg-dark  text-light rounded">
             <h3 class="text-warning">Welcome to
                 <?php echo $catname; ?> forums.
             </h3>
@@ -70,8 +70,8 @@ include "partials/_dbconnect.php";
         </div>
     </div>
 
-    <div class="container px-5">
-        <div class="mt-4 px-5 py-3 bg-dark  text-light rounded">
+    <div class="container-fluid p-3">
+        <div class="p-3 bg-dark  text-light rounded">
             <h3 class="text-warning">Create the Buzz – Ask Your Question! 🐝</h3>
             <hr>
             <br>
@@ -92,10 +92,10 @@ include "partials/_dbconnect.php";
         </div>
     </div>
 
-    <div class="container style" style="min-height: 20vh;">
+    <div class="container-fluid" style="min-height: 20vh;">
         <br>
         <br>
-        <h4 class="text-warning mx-5">Explore the Buzz 🐝</h4>'
+        <h4 class="text-warning m-2">Explore the Buzz 🐝</h4>'
         <?php
             $id = $_GET['catid'];
             $sql = "SELECT * FROM `threads` WHERE thread_category_id=$id";
@@ -107,7 +107,7 @@ include "partials/_dbconnect.php";
                 $threadtitle = $row['thread_title'];
                 $threaddesc = $row['thread_description'];
                 $thread_time = $row['timestamp'];
-                echo '<div class="d-flex my-2 mx-5">
+                echo '<div class="d-flex m-2">
                     <div class="flex-shrink-0">
                         <img src="/images/default.png" width="43px" alt="...">
                     </div>

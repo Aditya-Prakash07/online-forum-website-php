@@ -21,8 +21,8 @@ include "partials/_dbconnect.php";
     include "partials/_header.php";
     ?>
 
-<div class="container p-5">
-    <div class="mt-4 px-5 py-3 bg-dark text-light rounded shadow-lg">
+<div class="container-fluid p-3">
+    <div class="p-3 bg-dark text-light rounded shadow-lg">
         <h3 class="mb-4"><span class="text-warning">ForumHive 🐝</span> About Us</h3>
         <h6 class="mb-4">Welcome to <span class="text-warning">ForumHive 🐝!</span> We are a community of passionate developers, coders, and tech enthusiasts. Our platform is designed to foster collaboration, learning, and problem-solving in the world of coding and technology.</h6>
 
